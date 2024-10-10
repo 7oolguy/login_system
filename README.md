@@ -8,8 +8,7 @@ Este template fornece uma configuração mínima para usar React no Vite com HMR
 
 ## Sistema de Login com React + Vite
 Este projeto tem como objetivo criar um sistema de login simples utilizando React e Vite para o frontend. O backend já está disponível, e a comunicação entre o frontend e o backend é feita através de APIs REST, utilizando autenticação baseada em tokens.
-
-- Tecnologias Utilizadas
+###Tecnologias Utilizadas
 - Frontend: React + Vite
 - Linguagem: JavaScript/TypeScript
 - Estilização: CSS Modules / Styled Components
