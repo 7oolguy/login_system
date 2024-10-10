@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 242, 242);
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  font-size: 80px;
+  letter-spacing: -5px;
+  margin-bottom: 7%;
+}
+.title::after{
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  /* justify-content: center; */
+  /* background-color: aqua; */
+  width: 40%;
+  height: 60%;
+  padding: 30px;
+  transition: 0.8s;
+}
+.card:hover{
+  box-shadow: 
+    -20px -20px 20px rgba(255, 253, 253, 0.5),
+    20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.l{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.l button {
+  margin-top: 10px;
+  height: 40px;
+  width: 100px;
+  font-size: 18px;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.l button:hover {
+  transform: scale(1.02);
+  background-color: rgb(108, 50, 161);
+}
+
+.l div label {
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: 18px;
+}
+.l div input {
+  font-size: 15px;
+  padding: 5px 8px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid black;
+  transition: 0.5s;
+}
+.l div input:focus {
+  border: 1px solid grey;
+  box-shadow: none;
+}
+
+.link {
+  margin-top: 10px;
+  font-size: 12px;
+  color: red;
+  text-decoration: none;
+}
+
+.email-div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+.password-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.userButton{
+  position: absolute;
+  top: 90vh;
+}
+.logout{
+  position: absolute;
+  top: 2vh;
+  left: 92vw;
+  height: 30px;
+  width: 90px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: 0.5s;
+}
+.logout:hover{
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.text{
+  font-weight: bold;
+  padding: 5px;
+  color: white;
+  background-color: red;
+}
+.text a{
+  transition: 0.5s;
+}
+.text a:hover {
+  padding: 5px;
+  color: black;
+  background-color: rgb(243, 242, 242);
+}
