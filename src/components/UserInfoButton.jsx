@@ -14,8 +14,8 @@ const UserInfoButton = () => {
     };
 
     return (
-        <button className="userButton" onClick={handleClick}>
-            Checa Informação do Usuario pressione F12
+        <button className="user-info btn" onClick={handleClick}>
+            Checar Informação do usuário no console
         </button>
     );
 };

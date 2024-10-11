@@ -37,11 +37,11 @@ export default function SignupPage() {
         }
     }
     return (
-        <div className="page">
+        <div className="container">
             <div className="card">
-                <h2 className="title">Cadastro</h2>
-                <form className="singup-form l" onSubmit={handleSubmit}>
-                    <div className="email-div">
+                <h2 className="section-title red-dot">Cadastro</h2>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <div className="form-input">
                         <label>Email:</label>
                         <input
                             type='email'
@@ -50,7 +50,7 @@ export default function SignupPage() {
                             required
                         />
                     </div>
-                    <div className="password-div">
+                    <div className="form-input">
                         <label>Senha:</label>
                         <input
                             type="password"
@@ -59,13 +59,18 @@ export default function SignupPage() {
                             required
                         />
                     </div>
-                    <Link className="link" to="/login">Já tem uma conta? Faça login aqui.</Link>
-                    <button type="submit">Cadastrar</button>
+                    <p className="switch">
+                        Já esta cadastrado?
+                        <Link className="link" to="/login">Login</Link>
+                    </p>
+                    
+                    <button className="submit btn" type="submit">Cadastrar</button>
                 </form>
-                {message && <p>{message}</p>}
+                <UserInfoButton />
+                {message && <p className="message">{message}</p>}
             </div>
             
-            <UserInfoButton />
+            
             
         </div>
     )

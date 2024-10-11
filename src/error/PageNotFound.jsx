@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const PageNotFound = () => {
     return (
-        <div>
-            <h2>404 - Página Não Encontrada</h2>
-            <p>
-                A página que você está procurando não existe. Volte para a <Link to="/">página inicial</Link>.
+        <div className='container'>
+            <h2 className='page-title red-dot'>404 - Página Não Encontrada</h2>
+            <p className='page-text'>
+                A página que você está procurando não existe. Volte para a <Link className='page-link' to="/">página inicial</Link>.
             </p>
         </div>
     );

@@ -40,11 +40,11 @@ export default function LoginPage() {
     };
 
     return <>
-        <div className="login-page page">
+        <div className="container">
             <div className="card">
-               <h1 className="title">Login</h1>
-                <form className="login-form l" onSubmit={handleSubmit}>
-                    <div className="email-div">
+               <h1 className="section-title red-dot">Login</h1>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <div className="form-input">
                         <label>Email:</label>
                         <input
                             type="email"
@@ -53,7 +53,7 @@ export default function LoginPage() {
                             required
                         />
                     </div>
-                    <div className="password-div">
+                    <div className="form-input">
                         <label>Password:</label>
                         <input
                             type="password"
@@ -62,8 +62,11 @@ export default function LoginPage() {
                             required
                         />
                     </div>
-                    <Link to="/signup" className="crie-conta-link link">Não tem conta? Crie uma agora.</Link>
-                    <button className="submit-btn" type="submit">Login</button>
+                    <p className="switch">
+                        Não tem uma conta ainda?
+                        <Link to="/signup" className="link">Sign-up.</Link>
+                    </p>
+                    <button className="submit btn" type="submit">Login</button>
                 </form>
                 
                 <UserInfoButton />

@@ -32,12 +32,13 @@ export default function ProtectedPage() {
     }
 
     return (
-        <div className="page">
+        <div className="container">
             <div className="card">
-               <h1 className="title">Perfil Info</h1>
-                <p className="info"><strong>Email:</strong> {user.email}</p>     
+               <h1 className="page-title">Perfil Info</h1>
+                <p className="page-text"><strong>Email:</strong> {user.email}</p>     
+                <LogoutButton />
             </div>
-            <LogoutButton />
+            
             <UserInfoButton />
         </div>
     );
