@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import UserInfoButton from "../components/UserInfoButton";
 
 export default function SignupPage() {
@@ -9,32 +7,39 @@ export default function SignupPage() {
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
 
-    const { login } = useAuth()
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        try{
-            const response = await axios.post("http://localhost:4000/users/create", {
-                email,
-                password,
+        try {
+            const response = await fetch("http://localhost:4000/users/create", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                })
             })
-
+        
             if (response.status === 200 || response.status === 201) {
                 setMessage("Cadastro realizado com sucesso!")
-
                 navigate('/login')
             }
-            console.log('Response:',response)
+        
+            const data = await response.json(); // Caso queira acessar os dados da resposta
+            console.log('Response:', data)
         } catch (error) {
             if (error.response && error.response.status === 409) {
-                setMessage("Email ja cadastrado.")
+                setMessage("Email já cadastrado.")
             } else {
                 setMessage("Cadastro falhou. Por favor, tente novamente.")
             }
             console.log(error)
         }
+        
     }
     return (
         <div className="container">

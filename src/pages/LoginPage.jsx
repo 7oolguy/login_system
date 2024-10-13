@@ -16,26 +16,34 @@ export default function LoginPage() {
         e.preventDefault()
 
         try {
-            const response = await axios.post('http://localhost:4000/auth/login', {
-                email,
-                password
+            const response = await fetch('http://localhost:4000/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
             });
-
+        
             if (response.status === 200 || response.status === 201) {
                 setMessage('Login bem sucedido');
-
-                const { token, refreshToken, email: userEmail } = response.data;
-
-                console.log("Response Data:", response.data)
-
+        
+                const data = await response.json(); // Obtém os dados da resposta
+                const { token, refreshToken, email: userEmail } = data;
+        
+                console.log("Response Data:", data);
+        
                 login({ email: userEmail, token, refreshToken });
-
+        
                 navigate('/');
+            } else {
+                setMessage("Falha no login, Por favor, verifique suas credenciais e tente novamente.");
             }
-            console.log('Response:',response)
         } catch (error) {
-            setMessage("Falha no login, Por favor, verifique suas credenciais e tente novamente.")
-            console.log(error)
+            setMessage("Falha no login, Por favor, verifique suas credenciais e tente novamente.");
+            console.log(error);
         }
     };
 

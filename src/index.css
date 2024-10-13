@@ -167,12 +167,16 @@
   --submit-color: #FE5F55;
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+}
+
 #root{
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: var(--bg-color);
   
   height: 100vh;
   width: 100vw;
@@ -322,6 +326,11 @@ html{
   height: auto;
 }
 
+.page {
+  height: auto;
+  width: 100%;
+}
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -343,6 +352,7 @@ html{
   .container{
     max-width: 1536px;
   }
+
 }
 
 /* 2XL */
@@ -384,5 +394,45 @@ html{
 @media (max-width: 475px) {
   .container{
     max-width: 100%;
+  }
+
+  .switch{
+    display: block;
+    text-align: center;
+  }
+  .link{
+    margin-left: 1%;
+  }
+  .section-title {
+    font-size: 4rem;
+  }
+  .red-dot::after{
+    height: 1rem;
+    width: 1rem;
+  }
+  .form-input {
+    margin-top: .5rem;
+  }
+  .card{
+    height: 60vh;
+  }
+  .submit {
+    font-size: 1.5rem;
+    height: 10vh;
+    width: 100%;
+  }
+
+  .page{
+    height: 70vh;
+  }
+
+  .page-title{
+    font-size: 3rem;
+  }
+  .page-text {
+    font-size: 1.2rem;
+  }
+  .logout {
+    margin-top: 40vh;
   }
 }
