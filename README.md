@@ -33,6 +33,11 @@ cd seu-repositorio
 
 ```bash
 npm install
+npm install react-scripts
+npm install react-dom
+npm install react-router-dom
+npm install react
+npm install cors
 ```
 ### Execute o projeto:
 
@@ -49,10 +54,9 @@ npm run build
 src/
 │
 ├── components/     # Componentes reutilizáveis
+├── error/          # Pagina de Erro (404 - Pagina nao encontrada)
 ├── pages/          # Páginas (Login, Cadastro, Home, etc.)
 ├── context/        # AuthContext para gerenciamento de autenticação
-├── services/       # Funções de API (Login, Logout, Registro, etc.)
-├── routes/         # Configuração de rotas protegidas e públicas
 └── main.jsx        # Arquivo de entrada principal
 ```
 ## Licença
