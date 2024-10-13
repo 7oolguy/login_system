@@ -1,49 +1,51 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css'
+import { StrictMode } from 'react' // Importa StrictMode para verificar possíveis problemas.
+import { createRoot } from 'react-dom/client' // Nova API do React para renderização de componentes.
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'; // Ferramentas de roteamento.
+import './index.css' // Importa o arquivo de estilos.
 
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext'; // Contexto de autenticação.
 
-import WelcomePage from './pages/WelcomePage';
+import WelcomePage from './pages/WelcomePage'; // Importa as páginas da aplicação.
 import PageNotFound from './error/PageNotFound';
 import LoginPage from './pages/LoginPage';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute'; // Importa o componente que protege rotas.
 import SignupPage from './pages/SignupPage';
 import ProtectedPage from './pages/ProtectedPage';
 
+// Definição das rotas usando createBrowserRouter.
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/', // Rota inicial.
     element: (
-      <ProtectedRoute>
-        <WelcomePage />
+      <ProtectedRoute> {/* Protege a rota inicial com autenticação. */}
+        <WelcomePage /> {/* Página inicial protegida. */}
       </ProtectedRoute>
     ),
-    errorElement: <PageNotFound />
+    errorElement: <PageNotFound /> // Componente exibido se a rota não for encontrada.
   },
   {
-    path: '/login',
-    element: <LoginPage />,
+    path: '/login', // Rota para a página de login.
+    element: <LoginPage />, // Página de login.
   },
   {
-    path: '/signup',
-    element: <SignupPage />
+    path: '/signup', // Rota para a página de cadastro.
+    element: <SignupPage /> // Página de cadastro.
   },
   {
-    path: '/protected',
+    path: '/protected', // Rota para a página protegida.
     element: (
-      <ProtectedRoute>
-        <ProtectedPage />
+      <ProtectedRoute> {/* Protege a rota da página protegida. */}
+        <ProtectedPage /> {/* Página protegida. */}
       </ProtectedRoute>
     ),
   },
 ])
 
+// Renderiza a aplicação dentro da div root.
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router}/>
+  <StrictMode> {/* Executa os componentes no modo estrito. */}
+    <AuthProvider> {/* Contexto de autenticação envolvido pela aplicação. */}
+      <RouterProvider router={router}/> {/* Define o provedor de rotas com as rotas definidas. */}
     </AuthProvider>
   </StrictMode>,
 )

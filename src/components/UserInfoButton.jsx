@@ -1,15 +1,15 @@
 // UserInfoButton.jsx
 import React from "react";
-import { useAuth } from "../context/AuthContext"; // Adjust the path as necessary
+import { useAuth } from "../context/AuthContext";
 
 const UserInfoButton = () => {
-    const { user } = useAuth(); // Use your custom hook to get user info
+    const { user } = useAuth(); // Usa a hook customizada para pegar a informacao do usuario
 
     const handleClick = () => {
         if (user) {
-            console.log("User is logged in:", user); // Log user information
+            console.log("User esta logado:", user); // Log a informacao do usuario
         } else {
-            console.log("User is not logged in.");
+            console.log("User nao esta logado.");
         }
     };
 

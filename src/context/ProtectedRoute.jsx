@@ -1,9 +1,9 @@
 import React from 'react';
-import { userAuth } from './AuthContext'; // Updated import
+import { userAuth } from './AuthContext';
 import { Outlet, Navigate } from 'react-router-dom';
 
 const ProtectedRoute = () => {
-    const { isAuthenticated } = userAuth(); // Updated hook
+    const { isAuthenticated } = userAuth(); // hook Atualizado
 
     return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 };
