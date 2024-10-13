@@ -11,10 +11,10 @@ Este projeto tem como objetivo criar um sistema de login simples utilizando Reac
 
 ### Tecnologias Utilizadas
 - Frontend: React + Vite
-- Linguagem: JavaScript/TypeScript
+- Linguagem: JavaScript
 - Estilização: CSS Modules / Styled Components
 - Autenticação: JWT (JSON Web Token)
-- Ferramentas: ESLint, Prettier, Axios
+- Ferramentas: ESLint, Prettier
 ### Funcionalidades
 - Página de login com autenticação de usuário
 - Página de cadastro para novos usuários
